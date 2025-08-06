@@ -1,4 +1,4 @@
-#include "ui_mainwindow.h"  // MUST BE INCLUDED FIRST
+#include "ui_mainwindow.h"
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->stackedWidget->setCurrentIndex(0); // Show Home Page first
 }
 
 MainWindow::~MainWindow()
@@ -15,12 +16,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_startButton_clicked()
 {
-    ui->label->setText("Let's begin! Get ready for your first puzzle.");
+    ui->stackedWidget->setCurrentIndex(2);  // Go to quiz page
+}
+void MainWindow::goToQuizPage() {
+    ui->stackedWidget->setCurrentIndex(2);  // or whatever index your quiz page is
 }
 
 void MainWindow::on_instructionsButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);  // switch to instructions page
+    ui->stackedWidget->setCurrentIndex(1);  // Show instructions page
     ui->instructionsBrowser->setHtml(
         "<h2>🧠 INSTRUCTIONS:</h2>"
         "<ul>"
@@ -61,14 +65,14 @@ void MainWindow::on_instructionsButton_clicked()
 
         "<h3>🚀 Ready? Click 'Start Game' to begin your challenge!</h3>"
         );
-} // ← this was missing
+}
 
 void MainWindow::on_backButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);  // Go back to the main/home page
+    ui->stackedWidget->setCurrentIndex(0);  // Back to home
 }
 
 void MainWindow::on_exitButton_clicked()
 {
-    close();
+    close(); // Close app
 }
