@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLabel>
+#include <QMovie>
+#include <QGraphicsOpacityEffect>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,10 +24,12 @@ private slots:
     void on_exitButton_clicked();
     void on_backButton_clicked();
 
-
-
 private:
     Ui::MainWindow *ui;
+
+    // === Added for background GIF ===
+    QLabel *backgroundLabel;
+    QMovie *backgroundMovie;
 };
 
 #endif // MAINWINDOW_H

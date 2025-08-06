@@ -1,11 +1,61 @@
 #include "ui_mainwindow.h"  // MUST BE INCLUDED FIRST
 #include "mainwindow.h"
+#include <QMovie>
+#include <QLabel>
+#include <QGraphicsOpacityEffect>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // === Apply button style to all buttons ===
+    QString buttonStyle = R"(
+        QPushButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+        }
+
+        QPushButton:hover {
+            background-color: #45a049;
+        }
+
+        QPushButton:pressed {
+            background-color: #388E3C;
+            padding-left: 14px;
+            padding-top: 14px;
+        }
+    )";
+
+    ui->startButton->setStyleSheet(buttonStyle);
+    ui->instructionsButton->setStyleSheet(buttonStyle);
+    ui->backButton->setStyleSheet(buttonStyle);
+    ui->exitButton->setStyleSheet(buttonStyle);
+
+    // === Add background GIF ===
+    QLabel *backgroundLabel = new QLabel(this);
+    QMovie *movie = new QMovie("1_kGUl6EWTSViaPpGjaQ_kUw.gif");
+
+    backgroundLabel->setMovie(movie);
+    backgroundLabel->setScaledContents(true);            // Stretch to full size
+    backgroundLabel->setGeometry(this->rect());          // Initially set to full window size
+    backgroundLabel->lower();                            // Send it to the back
+    movie->start();
+
+    // === Set opacity effect ===
+    QGraphicsOpacityEffect *opacityEffect = new QGraphicsOpacityEffect(this);
+    opacityEffect->setOpacity(0.3);                      // 0.0 = invisible, 1.0 = full opaque
+    backgroundLabel->setGraphicsEffect(opacityEffect);
+
+    // === Resize behavior: keep GIF fullscreen ===
+    connect(this, &MainWindow::resizeEvent, [=](QResizeEvent *) {
+        backgroundLabel->setGeometry(this->rect());
+    });
 }
 
 MainWindow::~MainWindow()
@@ -61,7 +111,7 @@ void MainWindow::on_instructionsButton_clicked()
 
         "<h3>🚀 Ready? Click 'Start Game' to begin your challenge!</h3>"
         );
-} // ← this was missing
+}
 
 void MainWindow::on_backButton_clicked()
 {
@@ -72,3 +122,4 @@ void MainWindow::on_exitButton_clicked()
 {
     close();
 }
+
