@@ -1,4 +1,4 @@
-#include "ui_mainwindow.h"  // MUST BE INCLUDED FIRST
+#include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include <QMovie>
 #include <QLabel>
@@ -49,13 +49,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     // === Set opacity effect ===
     QGraphicsOpacityEffect *opacityEffect = new QGraphicsOpacityEffect(this);
-    opacityEffect->setOpacity(0.3);                      // 0.0 = invisible, 1.0 = full opaque
+    opacityEffect->setOpacity(0.3);                      // 0.0 = invisible, 1.0 = fully opaque
     backgroundLabel->setGraphicsEffect(opacityEffect);
 
     // === Resize behavior: keep GIF fullscreen ===
     connect(this, &MainWindow::resizeEvent, [=](QResizeEvent *) {
         backgroundLabel->setGeometry(this->rect());
     });
+
+    // === Show Home Page first ===
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
 MainWindow::~MainWindow()
@@ -65,12 +68,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_startButton_clicked()
 {
-    ui->label->setText("Let's begin! Get ready for your first puzzle.");
+    ui->stackedWidget->setCurrentIndex(2);  // Go to quiz page
+}
+
+void MainWindow::goToQuizPage()
+{
+    ui->stackedWidget->setCurrentIndex(2);  // or whatever index your quiz page is
 }
 
 void MainWindow::on_instructionsButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(1);  // switch to instructions page
+    ui->stackedWidget->setCurrentIndex(1);  // Show instructions page
     ui->instructionsBrowser->setHtml(
         "<h2>🧠 INSTRUCTIONS:</h2>"
         "<ul>"
@@ -115,11 +123,10 @@ void MainWindow::on_instructionsButton_clicked()
 
 void MainWindow::on_backButton_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(0);  // Go back to the main/home page
+    ui->stackedWidget->setCurrentIndex(0);  // Back to home
 }
 
 void MainWindow::on_exitButton_clicked()
 {
-    close();
+    close(); // Close app
 }
-

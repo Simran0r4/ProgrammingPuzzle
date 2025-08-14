@@ -15,7 +15,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -23,6 +23,8 @@ private slots:
     void on_instructionsButton_clicked();
     void on_exitButton_clicked();
     void on_backButton_clicked();
+
+    void goToQuizPage();
 
 private:
     Ui::MainWindow *ui;
