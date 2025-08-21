@@ -1,5 +1,6 @@
 <RCC>
-    <qresource prefix="/new/prefix1/images">
-        <file>1_kGUl6EWTSViaPpGjaQ_kUw.gif</file>
-    </qresource>
+<qresource prefix="/new/prefix1"/>
+<qresource prefix="/images">
+    <file>images/download.jpg</file>
+</qresource>
 </RCC>

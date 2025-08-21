@@ -1,9 +1,9 @@
 #ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#define MAINWINDOW_H   // <-- this was missing
 
 #include <QMainWindow>
 #include <QLabel>
-#include <QMovie>
+#include <QPixmap> // for static image
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -31,7 +31,7 @@ private:
     Ui::MainWindow *ui;
 
     QLabel *backgroundLabel;
-    QMovie *backgroundMovie;
+    QPixmap backgroundImage; // store image here
     QWidget *overlay;
 };
 
