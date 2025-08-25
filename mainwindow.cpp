@@ -1,7 +1,9 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
+#include "question.h"   // ✅ include question system
 #include <QLabel>
 #include <QResizeEvent>
+#include <QDebug>       // optional for console check
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -63,6 +65,10 @@ MainWindow::MainWindow(QWidget *parent)
     overlay->lower();
     overlay->stackUnder(ui->centralwidget);
 
+    // === Load questions at startup ===
+    questions = getLevel1Questions();
+    qDebug() << "Loaded" << questions.size() << "questions";  // console check
+
     // === Show Home Page first ===
     ui->stackedWidget->setCurrentIndex(0);
 }
@@ -83,7 +89,14 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 
 void MainWindow::on_startButton_clicked()
 {
+    // ✅ Show Quiz Page
     ui->stackedWidget->setCurrentIndex(2);
+
+    // ✅ Example: display first question in QTextBrowser if it exists
+    if (!questions.isEmpty()) {
+        ui->questionLable->setText(questions[0].questionText);
+
+    }
 }
 
 void MainWindow::goToQuizPage()
@@ -112,4 +125,3 @@ void MainWindow::on_exitButton_clicked()
 {
     close();
 }
-

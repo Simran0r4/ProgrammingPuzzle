@@ -1,9 +1,10 @@
 #ifndef MAINWINDOW_H
-#define MAINWINDOW_H   // <-- this was missing
+#define MAINWINDOW_H
 
 #include <QMainWindow>
 #include <QLabel>
 #include <QPixmap> // for static image
+#include "question.h"  // ✅ added to use Question struct
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,6 +34,8 @@ private:
     QLabel *backgroundLabel;
     QPixmap backgroundImage; // store image here
     QWidget *overlay;
+
+    QVector<Question> questions;  // ✅ store questions
 };
 
 #endif // MAINWINDOW_H
