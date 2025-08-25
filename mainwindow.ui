@@ -18,14 +18,14 @@
     <item>
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="homPage">
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
-          <x>460</x>
-          <y>240</y>
+          <x>480</x>
+          <y>250</y>
           <width>383</width>
           <height>150</height>
          </rect>
@@ -95,8 +95,8 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'.AppleSystemUIFont'; font-size:13pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
        <widget class="QPushButton" name="backButton">
@@ -113,6 +113,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </property>
        </widget>
       </widget>
+<<<<<<< HEAD
       <widget class="QWidget" name="QuizPage">
        <widget class="QTextBrowser" name="questionLable">
         <property name="geometry">
@@ -125,6 +126,577 @@ li.checked::marker { content: &quot;\2612&quot;; }
         </property>
        </widget>
       </widget>
+=======
+      <widget class="QWidget" name="LevelsPage">
+       <widget class="QPushButton" name="Level1Button">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>141</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 1</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level2Button">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>140</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 2</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level3Button">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>140</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 3</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level4Button">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>140</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 4</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level5Button">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>140</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 5</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level6Button">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>140</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 6</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="BackButtonfromlvlpg">
+        <property name="geometry">
+         <rect>
+          <x>480</x>
+          <y>650</y>
+          <width>100</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Go Back</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level7Button">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>220</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 7</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level8Button">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>220</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 8</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level14Button">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>300</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 14</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level13Button">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>300</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 13</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level9Button">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>220</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 9</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level12Button">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>220</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 12</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level15Button">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>300</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 15</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level11Button">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>220</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 11</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level10Button">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>220</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 10</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level16Button">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>300</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 16</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level22Button">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 22</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level17Button">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>300</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 17</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level18Button">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>300</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 18</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level21Button">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 21</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level23Button">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 23</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level25Button">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 25</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level24Button">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 24</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level28Button">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 28</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level20Button">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 20</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level19Button">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>380</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 19</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level26Button">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 26</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level27Button">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 27</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level30Button">
+        <property name="geometry">
+         <rect>
+          <x>880</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 30</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="Level29Button">
+        <property name="geometry">
+         <rect>
+          <x>730</x>
+          <y>460</y>
+          <width>111</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Level 29</string>
+        </property>
+       </widget>
+       <widget class="QPlainTextEdit" name="LevelsPageHeading">
+        <property name="geometry">
+         <rect>
+          <x>350</x>
+          <y>50</y>
+          <width>531</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>30</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="plainText">
+         <string>Sharpen Your Skills: Pick a Level</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Level1Page">
+       <widget class="QLabel" name="questionLabel">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>120</y>
+          <width>511</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
+       <widget class="QGroupBox" name="optionsGroup">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>220</y>
+          <width>271</width>
+          <height>161</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Options: </string>
+        </property>
+        <widget class="QRadioButton" name="option1">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>99</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="option2">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>99</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="option3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>90</y>
+           <width>99</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+        <widget class="QRadioButton" name="option4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>120</y>
+           <width>99</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>RadioButton</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QPlainTextEdit" name="codeAnswerBox">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>390</y>
+          <width>401</width>
+          <height>151</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="skipButton">
+        <property name="geometry">
+         <rect>
+          <x>240</x>
+          <y>560</y>
+          <width>100</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Skip</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="submitButton">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>560</y>
+          <width>100</width>
+          <height>32</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Submit</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="Level2Page"/>
+      <widget class="QWidget" name="Level3Page"/>
+      <widget class="QWidget" name="Level4Page"/>
+      <widget class="QWidget" name="Level5Page"/>
+      <widget class="QWidget" name="Level6Page"/>
+      <widget class="QWidget" name="Level7Page"/>
+      <widget class="QWidget" name="Level8Page"/>
+      <widget class="QWidget" name="Level9Page"/>
+      <widget class="QWidget" name="Level10Page"/>
+      <widget class="QWidget" name="Level11Page"/>
+      <widget class="QWidget" name="Level12Page"/>
+      <widget class="QWidget" name="Level13Page"/>
+      <widget class="QWidget" name="Level14Page"/>
+      <widget class="QWidget" name="Level15Page"/>
+      <widget class="QWidget" name="Level16Page"/>
+      <widget class="QWidget" name="Level17Page"/>
+      <widget class="QWidget" name="Level18Page"/>
+      <widget class="QWidget" name="Level19Page"/>
+      <widget class="QWidget" name="Level20Page"/>
+      <widget class="QWidget" name="Level21Page"/>
+      <widget class="QWidget" name="Level22Page"/>
+      <widget class="QWidget" name="Level23Page"/>
+      <widget class="QWidget" name="Level24Page"/>
+      <widget class="QWidget" name="Level25Page"/>
+      <widget class="QWidget" name="Level26Page"/>
+      <widget class="QWidget" name="Level27Page"/>
+      <widget class="QWidget" name="Level28Page"/>
+      <widget class="QWidget" name="Level29Page"/>
+      <widget class="QWidget" name="Level30Page"/>
+>>>>>>> faee4f033fc27b391351c6c4d115714fa16cfe1e
      </widget>
     </item>
    </layout>
@@ -135,7 +707,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1254</width>
-     <height>25</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

@@ -30,7 +30,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         resources.qrc
+<<<<<<< HEAD
         resources.qrc
+=======
+        question.h
+        questions.cpp
+>>>>>>> faee4f033fc27b391351c6c4d115714fa16cfe1e
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET ProgrammingPuzzle APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
