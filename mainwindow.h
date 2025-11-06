@@ -3,19 +3,26 @@
 
 #include <QMainWindow>
 #include <QLabel>
-<<<<<<< HEAD
-#include <QPixmap> // for static image
-#include "question.h"  // ✅ added to use Question struct
-=======
-#include <QMovie>
+#include <QWidget>
+#include <QStringList>
+#include <QMap>
+#include <QList>
 #include <QVector>
-#include "question.h"   // struct Question
-
->>>>>>> faee4f033fc27b391351c6c4d115714fa16cfe1e
+#include <QButtonGroup>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+// Structure for each question
+struct Question {
+    QString text;
+    QStringList options;   // used for MCQ
+    int correctIndex;      // 0..3 for MCQ; -1 if not applicable
+    bool isMCQ;            // true => MCQ, false => code/snippet
+    QString expectedAnswer; // used for code question (simple simulated match)
+    QString hint;          // short hint to display when user asks
+};
 
 class MainWindow : public QMainWindow
 {
@@ -25,75 +32,80 @@ public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+    void setUserName(const QString &name) { userName = name; }
+
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private slots:
     void on_startButton_clicked();
     void on_instructionsButton_clicked();
-    void on_exitButton_clicked();
     void on_backButton_clicked();
+    void on_exitButton_clicked();
 
-    void on_Level1Button_clicked();
-    void on_Level2Button_clicked();
-    void on_Level3Button_clicked();
-    void on_Level4Button_clicked();
-    void on_Level5Button_clicked();
-    void on_Level6Button_clicked();
+    // navigation
+    void onNextQuestionClicked();
+    void onBackQuestionClicked();
 
-    void on_BackButtonfromlvlpg_clicked();
+    // option selects (no popups)
+    void onOptionGroupClicked(int id);
 
-    void on_Level7Button_clicked();
-    void on_Level8Button_clicked();
-    void on_Level9Button_clicked();
-    void on_Level10Button_clicked();
-    void on_Level11Button_clicked();
-    void on_Level12Button_clicked();
-    void on_Level13Button_clicked();
-    void on_Level14Button_clicked();
-    void on_Level15Button_clicked();
-    void on_Level16Button_clicked();
-    void on_Level17Button_clicked();
-    void on_Level18Button_clicked();
-    void on_Level19Button_clicked();
-    void on_Level20Button_clicked();
-    void on_Level21Button_clicked();
-    void on_Level22Button_clicked();
-    void on_Level23Button_clicked();
-    void on_Level24Button_clicked();
-    void on_Level25Button_clicked();
-    void on_Level26Button_clicked();
-    void on_Level27Button_clicked();
-    void on_Level28Button_clicked();
-    void on_Level29Button_clicked();
-    void on_Level30Button_clicked();
+    // hint
+    void onHintButtonClicked();
 
-    // New navigation buttons
-    void on_nextButton_clicked();
-    void on_skipButton_clicked();
-    void on_submitButton_clicked();
+    void on_pushButton_clicked();
+    void setupInstructionsPage();
 
-
+    // LEADERBOARD - ADD THESE
+    void showLeaderboard();
+    void setupLeaderboardPage();
 
 private:
-
-    void saveCurrentAnswer();
-    void showQuestion(int Index);
-
     Ui::MainWindow *ui;
 
     QLabel *backgroundLabel;
-    QPixmap backgroundImage; // store image here
     QWidget *overlay;
 
-<<<<<<< HEAD
-    QVector<Question> questions;  // ✅ store questions
-=======
-    QVector<Question> currentQuestions;  // Questions for current level
-    int currentQuestionIndex;            // Current question index
-    int score;                           // Score for current level
-    QStringList userAnswers;             // User answers
->>>>>>> faee4f033fc27b391351c6c4d115714fa16cfe1e
+    // existing
+    QString selectedLanguage;
+    QMap<QString, int> languageProgress;
+    QMap<QString, QStringList> languageLevels;
+
+    // question system
+    QMap<QString, QMap<int, QList<Question>>> questions; // language -> level -> list
+    int currentLevel;
+    int currentQuestionIndex;
+    int lastScore;
+    int lastTotal;
+
+    // user answers storage
+    QVector<int> userMCQAnswers;        // -1 if unanswered; index for chosen option
+    QVector<QString> userCodeAnswers;   // empty if unanswered
+
+    // option selection group
+    QButtonGroup *optionGroup;
+
+    // hints
+    QMap<QString, QMap<int, int>> hintsAvailable; // language -> level -> hints left
+    int hintsRemainingCurrentLevel;               // mirror for quick access
+    QLabel *hintLabel;                            // shows hint under question
+
+    // helper functions
+    void loadQuestion(const QString &lang, int level);
+    void refreshOptionButtonsUI(); // mark checked states based on userMCQAnswers
+    void checkAndStoreCurrentAnswerBeforeNavigate(); // stores code answer when moving
+    void finalizeSubmission();
+
+    // utilities
+    int computeBonusHintsForScore(int score);
+    void updateHintCountUI();
+    void debugUserAnswers();
+    void updateLevelLockStatusUI();
+    void saveUserScore(int level, int score, const QString &language);
+    QString userName;
+    void initDatabase();
+    void openLevel(int level);
+    void setupLevel(int level);
 };
 
 #endif // MAINWINDOW_H

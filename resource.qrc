@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>rr.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>images/Screenshot 2025-11-03 at 2.53.53 PM.png</file>
+    </qresource>
+</RCC>
